@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AssignmentVerse</string>
+    <string name="app_name">NitroVerse</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="welcome_mess">Welcome to Nitro Verse</string>
     <string name="perm_denied">Permission not granted</string>
@@ -8,4 +8,9 @@
     <string name="sno">%1$d. \t</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="liquid_swipe">Hi, This is a demo for liquid swipe</string>
+    <string name="your_contacts">Your Contacts</string>
+    <string name="sno_demo">1. demo</string>
+    <string name="name_demo">Rishabh demo</string>
+    <string name="num_demo">999999999 demo</string>
+    <string name="no_contact_found">No contact found add some, or grant permission</string>
 </resources>

@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,7 +18,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
 
 class SearchFragment : Fragment() {
@@ -51,6 +49,8 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val conRecView = view.findViewById<RecyclerView>(R.id.con_rec_view)
+        val noCon = view.findViewById<TextView>(R.id.no_con)
+
         dbRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
@@ -63,6 +63,10 @@ class SearchFragment : Fragment() {
                     conRecView.layoutManager = LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false)
                     conRecView.adapter = contactAdapter
 
+                }
+                else {
+                    noCon.visibility = View.VISIBLE
+                    conRecView.visibility = View.GONE
                 }
             }
             override fun onCancelled(error: DatabaseError) {

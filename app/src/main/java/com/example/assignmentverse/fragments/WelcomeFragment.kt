@@ -1,9 +1,7 @@
 package com.example.assignmentverse.fragments
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.content.Context
-import android.os.Build
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.util.Log
@@ -24,7 +22,6 @@ import com.google.firebase.ktx.Firebase
 
 class WelcomeFragment : Fragment() {
 
-    private lateinit var contactList: MutableList<ContactInfo>
 
     private lateinit var mContext: Context
     private lateinit var mActivity: FragmentActivity
@@ -40,8 +37,6 @@ class WelcomeFragment : Fragment() {
         super.onCreate(savedInstanceState)
         mContext = requireContext()
         mActivity  = requireActivity()
-        contactList = mutableListOf();
-
 
         dbRef = Firebase.database.getReference("Contacts")
 
@@ -60,6 +55,7 @@ class WelcomeFragment : Fragment() {
 
         permTxt = view.findViewById(R.id.perm_txt)
 
+        // Permission check
         val permissionLauncher = registerForActivityResult(
             ActivityResultContracts.RequestPermission()
         ) { isGranted ->
@@ -69,7 +65,7 @@ class WelcomeFragment : Fragment() {
                         if (!snapshot.exists()) {
                             readContacts()
                             permTxt.apply {
-                                setTextColor(ContextCompat.getColor(mContext, R.color.purple_500))
+                                setTextColor(ContextCompat.getColor(mContext, R.color.primary))
                             }
                         }
                     }
@@ -117,7 +113,6 @@ class WelcomeFragment : Fragment() {
             if (phoneCur?.moveToNext() == true) {
                 val number = phoneCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)
                 val newCont = ContactInfo(contactCur.getString(name), phoneCur.getString(number))
-                contactList.add(newCont)
                 // Inserting into db
                 val contactId = dbRef.push().key ?: ""
                 dbRef.child(contactId).setValue(newCont)
@@ -128,7 +123,6 @@ class WelcomeFragment : Fragment() {
             phoneCur?.close()
          }
         contactCur?.close()
-        Log.d("list", "${contactList.size}")
     }
 
 }

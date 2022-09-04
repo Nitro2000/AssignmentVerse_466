@@ -23,6 +23,8 @@
         android:layout_height="wrap_content"
         app:menu="@menu/menu"
         android:background="#ffffff"
+        app:itemIconTint="@color/bottom_nav_icon_color_change"
+        app:itemTextColor="@color/bottom_nav_icon_color_change"
         android:padding="8dp"
         app:itemRippleColor="#636667"
         app:labelVisibilityMode="labeled"
