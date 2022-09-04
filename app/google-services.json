@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "671772518945",
+    "project_id": "nitro-verse",
+    "storage_bucket": "nitro-verse.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:671772518945:android:a20cfe8aba4be116105160",
+        "android_client_info": {
+          "package_name": "com.example.assignmentverse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "671772518945-i22rahp4gqsacrhc6mc4m3us5u58tqc2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE1OYrlKiakZthbsd-R07gM32GJLmE580"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "671772518945-i22rahp4gqsacrhc6mc4m3us5u58tqc2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

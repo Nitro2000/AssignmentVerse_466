@@ -1,0 +1,33 @@
+package com.example.assignmentverse
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
+import com.cuberto.liquid_swipe.LiquidPager
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
+class MainActivity : AppCompatActivity() {
+
+    lateinit var bottomNavBar: BottomNavigationView
+    lateinit var viewPager: LiquidPager
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        initalise()
+
+        viewPager.adapter = LiquidPagerAdapter(SplashScreen())
+        val navController = findNavController(R.id.navController)
+
+        bottomNavBar.setupWithNavController(navController)
+
+    }
+
+    private fun initalise() {
+        bottomNavBar = findViewById(R.id.bottom_menu)
+        viewPager = findViewById(R.id.pager)
+
+    }
+}

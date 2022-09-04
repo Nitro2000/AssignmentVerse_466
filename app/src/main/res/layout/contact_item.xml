@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/con_sno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. demo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/con_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rishabh demo"
+        app:layout_constraintStart_toEndOf="@id/con_sno"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/con_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="999999999 demo"
+        app:layout_constraintStart_toStartOf="@id/con_name"
+        app:layout_constraintTop_toBottomOf="@id/con_name"
+        android:textSize="16sp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
